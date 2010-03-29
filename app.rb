@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'mongo'
-require 'activesupport'
+require 'active_support'
 
 class Integer
   def odd

@@ -1,12 +1,12 @@
 <table style="width:100%;">
 	<thead>
 		<tr>
-			<th class="gray">No</th>
-			<th>Title</th>
-			<th>Date</th>
-			<th>Region</th>
-			<th>Money</th>
-			<th>Details</th>
+			<th>&nbsp;</th>
+			<th>Должность</th>
+			<th>Дата</th>
+			<th>Регион</th>
+			<th>Зарплата</th>
+			<th>Детали<br/>(на Хабре)</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -19,7 +19,7 @@
 			<td class="center"><%= row['date'] %></td>
 			<td><%= row['region'] %></td>
 			<td class="center"><%= row['money_num'] %> (<%= row['money'] %>)</td>
-			<td class="center"><a href="<%= row['url'] %>" target="_blank">View</a></td>
+			<td class="center"><a href="<%= row['url'] %>" target="_blank">View &#8634;</a></td>
 		</tr>
 	<% end %>
 	</tbody>

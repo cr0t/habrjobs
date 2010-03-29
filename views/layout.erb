@@ -3,40 +3,8 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 		<title>HabrJobs List</title>
-		<style type="text/css">
-		body {
-			font: 10pt sans-serif;
-		}
-		img {
-			border: none;
-		}
-		table {
-			border-collapse: collapse;
-			padding: 0;
-			border: solid 1px #ccc;
-		}
-		thead tr {
-			border-bottom: solid 1px #ccc;
-		}
-		th {
-			text-align: center;
-			font-weight: bold;
-		}
-		.odd {
-			background: #eee;
-		}
-		.gray {
-			color: #888;
-		}
-		.center {
-			text-align: center;
-		}
-
-		.footer {
-			margin-top: 20px;
-			text-align: right;
-		}
-		</style>
+		<link rel="stylesheet" href="/stylesheets/application.css" />
+		
 		<script type="text/javascript"> 
 		/*<![CDATA[*/
 			var _gaq = _gaq || [];
@@ -52,19 +20,28 @@
 	</head>
 
 	<body>
-		<div style="width:560px;float:left;padding-top:15px;padding-bottom:15px;">
-			<h1 style="margin-bottom:0;">HabrJobs</h1>
-			<div style="color:#777;line-height:12px;">
+		<div class="header">
+			<h1>HabrJobs</h1>
+			<div class="description">
 				Это небольшой веб-сервис, который регулярно скачивает свежие вакансии, публикуемые на сайте Хабрахабр и предоставляет RSS-ленту для тех, кто хочет быть в курсе последних вакансий в Хабра-сфере.
 			</div>
 		</div>
-		<div style="width:64px;float:right;"><a href="http://feeds.feedburner.com/habrjobs" title="Subscribe to our RSS feed to get the most fresh vacancies from Habrahabr.ru"><img src="/images/hatrss_white.png" width="64" height="64"/></a></div>
-		<div style="clear:both;border-bottom:solid 1px #aaa;margin-bottom:20px;"></div>
-		<div class="content">
-		<%= yield %>
+		
+		<div class="rss_link">
+			<a href="http://feeds.feedburner.com/habrjobs" title="Subscribe to our RSS feed to get the most fresh vacancies from Habrahabr.ru">
+				<img src="/images/hatrss_white.png" width="64" height="64"/>
+			</a>
 		</div>
+		
+		<div class="clear header_bottom"></div>
+		
+		<div class="content">
+			<%= yield %>
+		</div>
+		
 		<div class="footer">
-			<img src="/images/mongo_powered.png" alt="Powered by MongoDB"/>
+			<img src="/images/sinatra_logo.gif" alt="Powered by Sinatra" height="61"/>
+			<img src="/images/mongo_powered.png" alt="Powered by MongoDB" width="129" height="61"/>
 		</div>
 	</body>
 </html>
