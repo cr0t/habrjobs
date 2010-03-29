@@ -1,0 +1,26 @@
+<table style="width:100%;">
+	<thead>
+		<tr>
+			<th class="gray">No</th>
+			<th>Title</th>
+			<th>Date</th>
+			<th>Region</th>
+			<th>Money</th>
+			<th>Details</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% count = 0 %>
+	<% @jobs.each do |row| %>
+		<tr class="<% if count.odd? %><%= 'odd' %><% end %>">
+			<% count += 1 %>
+			<td class="gray center"><%= count %></td>
+			<td><%= row['title'] %></td>
+			<td class="center"><%= row['date'] %></td>
+			<td><%= row['region'] %></td>
+			<td class="center"><%= row['money_num'] %> (<%= row['money'] %>)</td>
+			<td class="center"><a href="<%= row['url'] %>" target="_blank">View</a></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
