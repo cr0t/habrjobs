@@ -1,8 +1,8 @@
-set :application, "ru.summercode.habrjobs"
+set :application, "com.summercode.habrjobs"
 
 set :scm, :git
 set :branch, "master"
-set :repository, "ssh://summercode.ru/var/git/habrjobs.git"
+set :repository, "ssh://summercode.com/var/git/habrjobs.git"
 
 role :app, "summercode"
 
