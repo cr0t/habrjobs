@@ -11,15 +11,15 @@
 	</thead>
 	<tbody>
 	<% count = 0 %>
-	<% @jobs.each do |row| %>
+	<% @jobs.each do |job| %>
 		<tr class="<% if count.odd? %><%= 'odd' %><% end %>">
 			<% count += 1 %>
 			<td class="gray center"><%= count %></td>
-			<td><%= row['title'] %></td>
-			<td class="center"><%= row['date'] %></td>
-			<td><%= row['region'] %></td>
-			<td class="center"><%= row['money_num'] %> (<%= row['money'] %>)</td>
-			<td class="center"><a href="<%= row['url'] %>" target="_blank">View &#8634;</a></td>
+			<td><%= job['title'] %></td>
+			<td class="center"><%= job['date'] %></td>
+			<td><%= job['region'] %></td>
+			<td class="center"><%= job['money_num'] %> (<%= job['money'] %>)</td>
+			<td class="center"><a href="<%= job['url'] %>" target="_blank">Перейти&nbsp;&#8634;</a></td>
 		</tr>
 	<% end %>
 	</tbody>

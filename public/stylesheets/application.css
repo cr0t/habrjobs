@@ -30,11 +30,76 @@ table td a { text-decoration: none; }
   width: 64px;
   float: right;
 }
-.header_bottom {
-  border-bottom: solid 1px #aaaaaa;
-  margin-bottom: 20px;
-}
+.header_bottom { border-bottom: solid 1px #aaaaaa; }
+.top_menu { margin: 10px 0; }
 .footer {
   margin-top: 20px;
   text-align: right;
+}
+.btn {
+  display: inline-block;
+  background: none;
+  margin: 0;
+  padding: 3px 0;
+  border-width: 0;
+  overflow: visible;
+  font: 12px Calibri, Tahoma, Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: #333333;
+}
+* html button.btn { padding-bottom: 1px; }
+html:not([lang*=""]) button.btn { margin: 0 -3px; }
+button.btn { margin: 0 -3px; }
+.btn span {
+  background: #dddddd url(/images/bg-button.gif) repeat-x 0 0;
+  margin: 0;
+  padding: 3px 0;
+  border-left: 1px solid #bbbbbb;
+  border-right: 1px solid #aaaaaa;
+}
+* html .btn span { padding-top: 0; }
+.btn span span {
+  position: relative;
+  padding: 3px 0.4em;
+  border-width: 0;
+  border-top: 1px solid #bbbbbb;
+  border-bottom: 1px solid #aaaaaa;
+}
+button.pill-l span { border-right-width: 0; }
+button.pill-l span span { border-right: 1px solid #bbbbbb; }
+button.pill-c span {
+  border-right-style: none;
+  border-left-color: #ffffff;
+}
+button.pill-c span span { border-right: 1px solid #bbbbbb; }
+button.pill-r span { border-left-color: #ffffff; }
+.btn:hover span {
+  cursor: pointer;
+  border-color: #99ccff !important;
+  color: #000000;
+}
+.btn:hover span span {
+  cursor: pointer;
+  border-color: #99ccff !important;
+  color: #000000;
+}
+.btn:focus span {
+  cursor: pointer;
+  border-color: #99ccff !important;
+  color: #000000;
+}
+.btn:focus span span {
+  cursor: pointer;
+  border-color: #99ccff !important;
+  color: #000000;
+}
+.btn:active span {
+  background-position: 0 -400px;
+  outline: none;
+}
+.btn:focus { outline: none; }
+.btn:active { outline: none; }
+.primary {
+  font-weight: bold;
+  color: #000000;
 }

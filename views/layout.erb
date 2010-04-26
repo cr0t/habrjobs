@@ -7,14 +7,14 @@
 		
 		<script type="text/javascript"> 
 		/*<![CDATA[*/
-			var _gaq = _gaq || [];
+			/*var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', 'UA-2463736-23']);
 			_gaq.push(['_trackPageview']);
 			(function() {
 				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
-			})();
+			})();*/
 		/*]]>*/
 		</script>
 	</head>
@@ -35,13 +35,26 @@
 		
 		<div class="clear header_bottom"></div>
 		
+		<div class="search" style="float:right;">
+			Найти по должности: <form action="/search" method="post"><input type="text" name="word" value="<%= params[:word] %>"></form>
+		</div>
+		
+		<div class="top_menu">
+			Последние вакансии:
+			<a class="btn" href="/10"><span><span>10</span></span></a>
+			<a class="btn" href="/25"><span><span>25</span></span></a>
+			<a class="btn" href="/70"><span><span>70</span></span></a>
+			<a class="btn" href="/all"><span><span>Все</span></span></a>
+			Показать зарплаты: <a class="btn" href="/salary/topfirst"><span><span>по убыванию</span></span></a>
+		</div>
+		
 		<div class="content">
 			<%= yield %>
 		</div>
 		
 		<div class="footer">
-			<img src="/images/sinatra_logo.gif" alt="Powered by Sinatra" height="61"/>
-			<img src="/images/mongo_powered.png" alt="Powered by MongoDB" width="129" height="61"/>
+			<img src="/images/sinatra_logo.gif" alt="Powered by Sinatra" height="24"/>
+			<img src="/images/mongo_powered.png" alt="Powered by MongoDB" height="24"/>
 		</div>
 	</body>
 </html>
