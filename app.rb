@@ -17,19 +17,36 @@ end
 db = Mongo::Connection.new.db('habr')
 jobs_collection = db['habr_jobs']
 
+# XML feed
+get '/feed.xml' do
+	@jobs = jobs_collection.find().sort(:job_id, -1).to_a
+	builder :feed
+end
+
+# MAIN PAGE
 get '/' do
 	@jobs = jobs_collection.find().sort(:job_id, -1).limit(DEFAULT_LIMIT).to_a
 	erb :job_list
 end
 
+# LIMIT FOR THE NUMBER OF JOBS
 get '/:limit' do
   lim = params[:limit].to_i
   @jobs = jobs_collection.find().sort(:job_id, -1).limit(lim).to_a
 	erb :job_list
 end
 
+# SORTED BY SALARY (MONEY_NUM)
 get '/salary/topfirst' do
   @jobs = jobs_collection.find().sort(:money_num, -1).to_a
+	erb :job_list
+end
+
+# SEARCH ACTION
+post '/search' do
+  phrase = params[:word]
+  @jobs = jobs_collection.find(:title => /.*#{phrase}.*/i).sort(:job_id, -1).to_a
+#  params[:word].inspect
 	erb :job_list
 end
 
@@ -40,15 +57,3 @@ get '/:sort/:direction' do
 	erb :job_list
 end
 =end
-
-post '/search' do
-  phrase = params[:word]
-  @jobs = jobs_collection.find(:title => /.*#{phrase}.*/i).sort(:job_id, -1).to_a
-#  params[:word].inspect
-	erb :job_list
-end
-
-get '/feed.xml' do
-	@jobs = jobs_collection.find().sort(:job_id, -1).to_a
-	builder :feed
-end

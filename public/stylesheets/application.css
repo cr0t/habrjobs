@@ -16,12 +16,15 @@ table td a { text-decoration: none; }
 .center { text-align: center; }
 .clear { clear: both; }
 .header {
-  width: 560px;
+  width: 700px;
   float: left;
-  padding-top: 15px;
+  padding-top: 0;
   padding-bottom: 15px;
 }
-.header h1 { margin-bottom: 0; }
+.header h1 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
 .header .description {
   color: #777777;
   line-height: 12px;
@@ -30,8 +33,8 @@ table td a { text-decoration: none; }
   width: 64px;
   float: right;
 }
-.header_bottom { border-bottom: solid 1px #aaaaaa; }
-.top_menu { margin: 10px 0; }
+.header_bottom { height: 5px; }
+.top_menu { margin: 20px 0; }
 .footer {
   margin-top: 20px;
   text-align: right;
