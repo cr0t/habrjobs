@@ -17,6 +17,10 @@ end
 db = Mongo::Connection.new.db('habr')
 jobs_collection = db['habr_jobs']
 
+get '/robots.txt' do
+  "User-agent: *\nAllow: /"
+end
+
 # XML feed
 get '/feed.xml' do
 	@jobs = jobs_collection.find().sort(:job_id, -1).to_a
