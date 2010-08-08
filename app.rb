@@ -23,7 +23,7 @@ end
 
 # XML feed
 get '/feed.xml' do
-	@jobs = jobs_collection.find().sort(:job_id, -1).to_a[0..15]
+	@jobs = jobs_collection.find().sort(:job_id, -1).to_a[0...15]
 	builder :feed
 end
 
