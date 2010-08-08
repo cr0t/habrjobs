@@ -2,7 +2,7 @@ set :application, "com.summercode.habrjobs"
 
 set :scm, :git
 set :branch, "master"
-set :repository, "git://gitosis@git.summercode.com:habrjobs.git"
+set :repository, "gitosis@git.summercode.com:habrjobs.git"
 
 role :app, "summercode"
 
