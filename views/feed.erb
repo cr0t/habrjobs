@@ -3,11 +3,11 @@
 	<channel>
 		<title>HabrJobs</title>
 		<link>http://habrjobs.summercode.com/</link>
-		<pubDate><%= Time.parse(@jobs.first["date"]).httpdate if @jobs.any? %></pubDate>
 		<description>Habrahabr.ru Jobs Feed</description>
 		<% @jobs.each do |job| %>
 		<item>
 			<title><%= (job['title'] + ' ' + job['money_num'].to_s + ' (' + job['money'] + ')').squeeze(" ") %></title>
+			<pubDate><%= Time.parse(job['date']).httpdate %></pubDate>
 			<link><%= job['url'] %></link>
 			<description><%= job['region'].squeeze(" ") %></description>
 		</item>
