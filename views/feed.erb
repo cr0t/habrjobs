@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+	<channel>
+		<title>HabrJobs</title>
+		<link>http://habrjobs.summercode.com/</link>
+		<pubDate><%= Time.parse(@jobs.first["date"]).httpdate if @jobs.any? %></pubDate>
+		<description>Habrahabr.ru Jobs Feed</description>
+		<% @jobs.each do |job| %>
+		<item>
+			<title><%= (job['title'] + ' ' + job['money_num'].to_s + ' (' + job['money'] + ')').squeeze(" ") %></title>
+			<link><%= job['url'] %></link>
+			<description><%= job['region'].squeeze(" ") %></description>
+		</item>
+		<% end %>
+	</channel>
+</rss>

@@ -2,6 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'mongo'
 require 'active_support'
+require 'time'
 
 DEFAULT_LIMIT = 40
 
@@ -24,7 +25,7 @@ end
 # XML feed
 get '/feed.xml' do
 	@jobs = jobs_collection.find().sort(:job_id, -1).to_a[0...15]
-	builder :feed
+	erb :feed, :layout => false
 end
 
 # MAIN PAGE
