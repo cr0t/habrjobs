@@ -18,13 +18,12 @@
 		<script type="text/javascript"> 
 		/*<![CDATA[*/
 			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-2463736-26']);
-			_gaq.push(['_setDomainName', 'habrjobs.summercode.com']);
+			_gaq.push(['_setAccount', 'UA-2463736-30']);
 			_gaq.push(['_trackPageview']);
 			(function() {
 				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			})();
 		/*]]>*/
 		</script>
@@ -34,6 +33,7 @@
 		<div class="header">
 			<h1>HabrJobs</h1>
 			<div class="description">
+				This is a small web service which downloads fresh vacancies from Habrahabr.ru regularly and gives RSS.<br/>
 				Это небольшой веб-сервис, который регулярно скачивает свежие вакансии, публикуемые на сайте Хабрахабр и предоставляет RSS-ленту для тех, кто хочет быть в курсе последних вакансий в Хабра-сфере.
 			</div>
 		</div>
