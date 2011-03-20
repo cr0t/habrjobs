@@ -1,44 +1,23 @@
-body { font: 10pt sans-serif; }
-img { border: none; }
-table {
-  border-collapse: collapse;
-  padding: 0;
-  border: solid 1px #cccccc;
-}
-table thead tr { border-bottom: solid 1px #cccccc; }
-table th {
-  text-align: center;
-  font-weight: bold;
-}
-table td a { text-decoration: none; }
-.odd { background: #eeeeee; }
-.gray { color: #888888; }
 .center { text-align: center; }
-.clear { clear: both; }
-.header {
-  width: 700px;
-  float: left;
-  padding-top: 0;
-  padding-bottom: 15px;
+.container {
+  font-family: sans-serif;
+  font-size: 12px;
 }
-.header h1 {
-  margin-bottom: 0;
-  margin-top: 0;
+h1, h2, h3, h4, h5 { font-family: "Droid Serif", "Georgia", serif; }
+.content { white-space: nowrap; }
+.content .head { font-weight: bold; }
+.content div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 1px 0;
 }
-.header .description {
-  color: #777777;
-  line-height: 12px;
+.content .even { background-color: #eeeeee; }
+.description { color: #777777; }
+#rss-link {
+  padding-top: 4em;
+  padding-left: 1.5em;
 }
-.rss_link {
-  width: 64px;
-  float: right;
-}
-.header_bottom { height: 5px; }
-.top_menu { margin: 20px 0; }
-.footer {
-  margin-top: 20px;
-  text-align: right;
-}
+.search-form, .footer { text-align: right; }
 .btn {
   display: inline-block;
   background: none;

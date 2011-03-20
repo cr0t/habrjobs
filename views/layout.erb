@@ -11,7 +11,11 @@
 		<meta name="description" content="HabrJobs представляет автоматически обновляемые список вакансий, публикуемых на сайте Хабрахабр.ру. Подпишитесь на наш RSS-поток, чтобы быть в курсе самых новых предлагаемых работодателями позиций." />
 		<meta name="keywords" content="вакансии, работа, rss, подписка, хабрахабр, свежие" />
 		
-		<link rel="stylesheet" href="/stylesheets/application.css" />
+		<link rel="stylesheet" href="/stylesheets/blueprint/screen.css" media="screen, projection" type="text/css"/>
+		<link rel="stylesheet" href="/stylesheets/blueprint/print.css" media="print" type="text/css"/>
+		<!--[if IE]><link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css"/><![endif]-->
+		<link href="http://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet" type="text/css"/>
+		<link rel="stylesheet" href="/stylesheets/application.css" media="screen, projection" type="text/css"/>
 		
 		<link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/habrjobs" /> 
 		
@@ -30,42 +34,52 @@
 	</head>
 
 	<body>
-		<div class="header">
-			<h1>HabrJobs</h1>
-			<div class="description">
-				This is a small web service which downloads fresh vacancies from Habrahabr.ru regularly and gives RSS.<br/>
-				Это небольшой веб-сервис, который регулярно скачивает свежие вакансии, публикуемые на сайте Хабрахабр и предоставляет RSS-ленту для тех, кто хочет быть в курсе последних вакансий в Хабра-сфере.
+		<div class="container">
+			
+			<div class="span-19 append-2">
+				<h1>HabrJobs</h1>
+				<p class="description">
+					This is a small web service which downloads fresh vacancies from Habrahabr.ru regularly and gives RSS.
+				</p>
+				<p class="description">
+					Это небольшой веб-сервис, который регулярно скачивает свежие вакансии, публикуемые на сайте Хабрахабр и предоставляет RSS-ленту для тех, кто хочет быть в курсе последних вакансий в Хабра-сфере.
+				</p>
 			</div>
-		</div>
-		
-		<div class="rss_link">
-			<a href="http://feeds.feedburner.com/habrjobs" title="Будь в курсе всех самых свежих вакансий с Хабры">
-				<img src="/images/3d_rss.jpg" width="64" height="64"/>
-			</a>
-		</div>
-		
-		<div class="clear header_bottom"></div>
-		
-		<div class="search" style="float:right;">
-			Найти по должности: <form action="/search" method="post"><input type="text" name="word" value="<%= params[:word] %>"></form>
-		</div>
-		
-		<div class="top_menu">
-			Последние вакансии:
-			<a class="btn" href="/10"><span><span>10</span></span></a>
-			<a class="btn" href="/25"><span><span>25</span></span></a>
-			<a class="btn" href="/70"><span><span>70</span></span></a>
-			<a class="btn" href="/all"><span><span>Все</span></span></a>
-			Показать зарплаты: <a class="btn" href="/salary/topfirst"><span><span>по убыванию</span></span></a>
-		</div>
-		
-		<div class="content">
-			<%= yield %>
-		</div>
-		
-		<div class="footer">
-			<img src="/images/sinatra_logo.gif" alt="Powered by Sinatra" height="24"/>
-			<img src="/images/mongo_powered.png" alt="Powered by MongoDB" height="24"/>
+			
+			<div class="span-3 last">
+				<p id="rss-link">
+					<a href="http://feeds.feedburner.com/habrjobs" title="Будь в курсе всех самых свежих вакансий с Хабры">
+						<img src="/images/3d_rss.jpg" width="64" height="64"/>
+					</a>
+				</p>
+			</div>
+			
+			<div class="span-15 append-2">
+				<p>
+					Последние вакансии:
+					<a class="btn" href="/10"><span><span>10</span></span></a>
+					<a class="btn" href="/25"><span><span>25</span></span></a>
+					<a class="btn" href="/70"><span><span>70</span></span></a>
+					<a class="btn" href="/all"><span><span>Все</span></span></a>
+					Показать зарплаты: <a class="btn" href="/salary/topfirst"><span><span>по убыванию</span></span></a>
+				</p>
+			</div>
+			
+			<div class="span-7 last search-form">
+				<form action="/search" method="post">
+					<label for="word">Найти по должности:</label>
+					<input type="text" name="word" id="word" value="<%= params[:word] %>"/>
+				</form>
+			</div>
+			
+			<div class="span-24 last content">
+				<%= yield %>
+			</div>
+			
+			<div class="span-24 last footer">
+				<img src="/images/sinatra_logo.gif" alt="Powered by Sinatra" height="24"/>
+				<img src="/images/mongo_powered.png" alt="Powered by MongoDB" height="24"/>
+			</div>
 		</div>
 	</body>
 </html>

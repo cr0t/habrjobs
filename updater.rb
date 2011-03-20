@@ -43,7 +43,7 @@ jobs_collection = db['habr_jobs']
 end
 
 #just little end of out little script - new line
-puts 
+#puts 
 
 #data = jobs_collection.find('job_id' => '1748').count()
 #puts data
