@@ -17,7 +17,7 @@ namespace :deploy do
   task :start do ; end
   task :stop do ; end
   task :restart do
-    run "/etc/unicorns/wiki restart"
+    run "/etc/unicorns/habrjobs restart"
   end
   
   after "deploy:update" do
