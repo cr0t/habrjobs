@@ -6,7 +6,7 @@
 		<description>Habrahabr.ru Jobs Feed</description>
 		<% @jobs.each do |job| %>
 		<item>
-			<title><%= (job['title'] + ' ' + job['money_num'].to_s + ' (' + job['money'] + ')').squeeze(" ") %></title>
+			<title><%= (job['title'].gsub('&', '&amp;') + ' ' + job['money_num'].to_s + ' (' + job['money'] + ')').squeeze(" ") %></title>
 			<pubDate><%= Time.parse(job['date']).httpdate %></pubDate>
 			<link><%= job['url'] %></link>
 			<description><%= job['region'].squeeze(" ") %></description>
